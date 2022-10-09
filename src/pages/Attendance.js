@@ -117,8 +117,9 @@ const Attendance = () => {
             Employee’s Dashboard
           </p>
         </div>
+
         <div className=" flex gap-5">
-          <div className=" bg-[#1765DC] flex items-center px-[30px]  py-[10px] justify-between  gap-3 font-[600] counter-btn-active ">
+          <div className=" bg-[#1765DC] flex items-center px-[20px]  h-[56px] justify-between  gap-3 font-[600] counter-btn-active ">
             <div>
               {" "}
               <MdOutlineAccessTime className=" text-[40px]" />
@@ -128,7 +129,7 @@ const Attendance = () => {
               <p className="text-[14px]">00:00:00 Hrs</p>
             </div>
           </div>
-          <div className="  flex items-center px-[30px]  py-[10px] justify-between  gap-3 font-[600] counter-btn-inactive ">
+          <div className="  flex items-center px-[20px] h-[56px] justify-between  gap-3 font-[600] counter-btn-inactive ">
             <div>
               {" "}
               <MdOutlineAccessTime className=" text-[40px]" />
