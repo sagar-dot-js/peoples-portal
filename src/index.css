@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .activeHollidayRow {
+    @apply;
+  }
+}
+
+* {
+  font-family: "Lato";
+}
+
+* {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+  scroll-behavior: smooth;
+}
+
+.test {
+  border: 1px solid red;
+}
+
+.test2 {
+  border: 1px solid blue;
+}
+
+.custom-px {
+  padding: 0px 100px;
+}
+.custom-py {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.custom-gradient {
+  /* Navbar */
+  background: linear-gradient(90.1deg, #1765dc 0%, #000000 100%);
+}
+
+.counter-btn-active {
+  color: #ffff;
+  background: #1765dc;
+  box-shadow: 0px 4px 8px rgba(23, 101, 220, 0.25);
+  border-radius: 8px;
+  color: #ffffff;
+}
+.counter-btn-inactive {
+  background: #ffffff;
+  border: 2px solid #1765dc;
+  border-radius: 8px;
+  color: #1765dc;
+}
+
+.custom-statCard {
+  background: #ffffff;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+.custom-box-shadow1 {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+.invoice-card {
+  width: 230px;
+  height: 240px;
+  background: #ffffff;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+
+.my-profile-card {
+  width: 400px;
+  height: 438px;
+  background: linear-gradient(0deg, #ffffff, #ffffff), #1765dc;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+.active-profile-tab {
+  color: #1765dc;
+  border-width: 1px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.active-profile-tab p {
+  transform: scale(1.05);
+}
+.information-form {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.footer {
+  color: #5f5f5f;
+  background: #e0e0e0;
+  border-radius: 24px 24px 0px 0px;
+}
+
+.information-form h1 {
+  font-weight: 400;
+  font-size: 24px;
+}
+.information-form p {
+  font-weight: 400;
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+/* Tables */
+
+#attendance-card-table {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  color: #333333;
+}
+
+#attendance-card-table th {
+  padding: 10px;
+  background: rgba(23, 101, 220, 0.9);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#attendance-card-table th,
+td {
+  padding: 10px 20px;
+}
+
+#attendance-card-table td {
+  font-weight: 600;
+  color: #333333;
+}
+
+#salary-card-table {
+  text-align: left;
+  width: 100%;
+  overflow: hidden;
+}
+#salary-card-table th {
+  padding: 15px;
+  background: rgba(23, 101, 220, 0.9);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#edit-info-table {
+  width: 100%;
+}
+
+#edit-info-table input,
+select {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+#edit-info-table button {
+  margin-top: 5px;
+  background-color: #1765dc;
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+#edit-info-table .icon {
+  font-size: 28px;
+  color: #acacac;
+}
+
+#edit-info-table h2 {
+  font-size: 20px;
+  color: #333333;
+  font-weight: 400;
+}
+
+.dBcZeh {
+  color: white !important;
+}
+
+.personal-info {
+  width: 320px;
+}
+
+.personal-info p {
+  color: #333333;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.personal-info span {
+  color: #5f5f5f;
+  font-weight: 600;
+}
