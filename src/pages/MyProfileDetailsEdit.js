@@ -30,7 +30,9 @@ let profileData = [
 ];
 
 const MyProfileDetailsEdit = () => {
-  let [activeProfileTab, setActiveProfileTab] = useState("Financial Details");
+  let [activeProfileTab, setActiveProfileTab] = useState(
+    "Personal Information"
+  );
   console.log(activeProfileTab);
 
   let getCorrectTab = (activeProfileTab) => {
