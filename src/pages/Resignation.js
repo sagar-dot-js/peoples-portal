@@ -8,7 +8,7 @@ const Resignation = () => {
   let [index, setIndex] = useState(0);
   let tab = [<ConfirmPasswordCard setIndex={setIndex} />, <ResonsForLeaving />];
 
-  return <div className="flex">{tab[index]}</div>;
+  return <div className="flex mb-[11em]">{tab[index]}</div>;
 };
 
 export default Resignation;

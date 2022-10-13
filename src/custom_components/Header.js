@@ -43,13 +43,15 @@ const Header = () => {
       </div>
       <div className=" custom-gradient h-[59px] flex items-center justify-center">
         <div className="text-[#ffff] ">
-          <nav className=" ">
-            <Navlink to="/dashboard">DASHBOARD</Navlink>
+          <nav>
+            {/* <Navlink to="/dashboard">DASHBOARD</Navlink>
             <Navlink to="/attendance">ATTENDANCE</Navlink>
             <Navlink to="/leave">LEAVE</Navlink>
             <Navlink to="/salary">SALARY</Navlink>
             <Navlink to="/policies">POLICIES</Navlink>
-            <Navlink to="/resignation">RESIGNATION</Navlink>
+            <Navlink to="/resignation">RESIGNATION</Navlink> */}
+            <Navlink to="/">Dashboard</Navlink>
+            <Navlink to="/attendance">Attendance</Navlink>
           </nav>
         </div>
       </div>

@@ -15,7 +15,7 @@ import {
 } from "./Accordion.style";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { useState, useContext, createContext } from "react";
-import { IoIosArrowDown } from "react-icons/io"
+import {IoIosArrowDown} from "react-icons/io"
 
 const data = [
   {
@@ -85,7 +85,7 @@ export default function Accordion({ children, ...restProps }) {
 }
 
 Accordion.Item = function AccordionItem({ children, ...restProps }) {
-  const { activeIndex, setActiveIndex, index } = useContext(ToggleContext);
+  const {activeIndex, setActiveIndex, index} = useContext(ToggleContext);
   return <Item activeIndex={activeIndex} setActiveIndex={setActiveIndex} index={index}   {...restProps}>{children}</Item>;
 };
 
@@ -99,7 +99,7 @@ Accordion.Header = function AccordionHeader({ children, ...restProps }) {
   );
 };
 
-Accordion.Icon = function AccordionIcon({ children, ...restProps }) {
+Accordion.Icon = function AccordionIcon ({children, ...restProps}) {
   return <Icon {...restProps}>{children}</Icon>
 }
 
@@ -108,7 +108,7 @@ Accordion.Title = function AccordionTitle({ children, ...restProps }) {
 };
 
 Accordion.Body = function AccordionBody({ children, ...restProps }) {
-  const { index, activeIndex } = useContext(ToggleContext)
+  const {index, activeIndex} = useContext(ToggleContext)
 
   let isActive = index === activeIndex
 

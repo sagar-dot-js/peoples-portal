@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { NavlinkWrapper } from "./Navlink.style";
 
 const Navlink = ({ children, to }) => {

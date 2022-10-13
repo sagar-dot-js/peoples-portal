@@ -15,6 +15,12 @@ import Table, {
 import Button from "../components/Button";
 import { useState } from "react";
 import TablePagination from "../components/Table/TablePagination";
+import months from "../json-data/months.json";
+import years from "../json-data/years.json";
+
+const newData = months.map((item) => {
+  return { label: item.name, value: item.abbreviation };
+});
 
 const Attendance = () => {
   const data = [
@@ -84,29 +90,49 @@ const Attendance = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const surveyType = ["one", "two", "three"];
   let cardData = [
     {
-      title: "Worked this month",
-      subTitle: "24 Days",
+      title: "Date",
+      subTitle: "23/09/2021",
     },
     {
-      title: "Leave this month",
-      subTitle: "00 Days",
+      title: "Check In",
+      subTitle: "09:01:35 Am",
     },
     {
-      title: "Taken leave this year",
-      subTitle: "04 Days",
+      title: "Check Out",
+      subTitle: "07:01:35 Pm",
     },
     {
-      title: "Joining Date",
-      subTitle: "03-12-2022",
+      title: "Duration",
+      subTitle: "10:09:05 Hrs",
     },
     {
-      title: "Date of Birth",
-      subTitle: "03-12-1999",
+      title: "Overtime",
+      subTitle: "24:00:00 Hrs",
     },
   ];
+
+  let ProductionType = [
+    {
+      label: "type1",
+      value: "type1",
+    },
+  ];
+
+  let overtimeData = [
+    {
+      label: "60 Minuts",
+      value: "60 Minuts",
+    },
+    {
+      label: "30 Minuts",
+      value: "30 Minuts",
+    },
+  ];
+
+  console.log(newData);
+
   return (
     <div className=" custom-px ">
       <div className="flex justify-between  custom-py ">
@@ -147,8 +173,8 @@ const Attendance = () => {
             return (
               <DisplayCard
                 customWidth="200px"
-                cardHeader="Card Header1"
-                cardBody="Card Body"
+                cardHeader={item.title}
+                cardBody={item.subTitle}
               />
             );
           })}
@@ -157,10 +183,10 @@ const Attendance = () => {
       {/*  */}
       <div className="flex justify-between w-full  my-14 ">
         <div className=" w-[80%] flex justify-between items-center  ">
-          <Dropdown dropdownText="Survey Type" options={surveyType} />
-          <Dropdown dropdownText="Study Type" options={surveyType} />
-          <Dropdown dropdownText="Country" options={surveyType} />
-          <Dropdown dropdownText="Date" options={surveyType} />
+          <Dropdown dropdownText="Month" options={newData} />
+          <Dropdown dropdownText="Year" options={years} />
+          <Dropdown dropdownText="Production Type" options={ProductionType} />
+          <Dropdown dropdownText="Overtime" options={overtimeData} />
           <Link
             color="#1765DC"
             border="underline"

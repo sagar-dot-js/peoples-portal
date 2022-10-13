@@ -1,7 +1,13 @@
 import React from "react";
 import Dropdown from "../components/Dropdown/Dropdown";
 import SalarySlipCard from "../custom_components/SalarySlipCard";
+import months from "../json-data/months.json";
+import years from "../json-data/years.json";
+
 const dropdownData = ["one", "two", "three"];
+const newMonths = months.map((item) => {
+  return { label: item.name };
+});
 
 let invoiceCardData = [
   {
@@ -68,8 +74,8 @@ const Salary = () => {
       </div>
       <div className="">
         <div className="flex items-end gap-5">
-          <Dropdown dropdownText="amsdhkjasdh" options={dropdownData} />
-          <Dropdown dropdownText="amsdhkjasdh" options={dropdownData} />
+          <Dropdown dropdownText="Month" options={newMonths} />
+          <Dropdown dropdownText="Year" options={years} />
           <a href="#" className="text-[#1765DC] underline">
             Clear Filter
           </a>

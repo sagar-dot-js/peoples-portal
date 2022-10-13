@@ -22,6 +22,8 @@ import Chip from "../components/Chips/Chip";
 import { Chips } from "../components/Chips/Chip.style";
 import UpcommingHolidays from "../custom_components/UpcommingHolidays";
 import { Calendar } from "react-calendar";
+import months from "../json-data/months.json";
+import year from "../json-data/years.json";
 
 const Leave = () => {
   const statusColors = {
@@ -74,26 +76,53 @@ const Leave = () => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const surveyType = ["one", "two", "three"];
+
+  const newmonth = months.map((item) => {
+    return { label: item.name, value: item.abbreviation };
+  });
+
   let cardData = [
     {
-      title: "Worked this month",
-      subTitle: "24 Days",
+      title: "TOTAL LEAVE",
+      subTitle: "24 ",
     },
     {
-      title: "Leave this month",
-      subTitle: "00 Days",
+      title: "REMAINING LEAVE",
+      subTitle: "00 ",
     },
     {
-      title: "Taken leave this year",
-      subTitle: "04 Days",
+      title: "CASUAL LEAVE",
+      subTitle: "11",
     },
     {
-      title: "Joining Date",
-      subTitle: "03-12-2022",
+      title: "JSick Leave",
+      subTitle: "15",
     },
     {
-      title: "Date of Birth",
-      subTitle: "03-12-1999",
+      title: "Unpaid Leave",
+      subTitle: "68",
+    },
+  ];
+
+  let leavetype = [
+    {
+      label: "Paid Leave",
+      value: "paid leave",
+    },
+    {
+      label: "Seak Leave",
+      value: "Seak leave",
+    },
+  ];
+
+  let status = [
+    {
+      label: "Pending",
+      value: "pending",
+    },
+    {
+      label: "Approved",
+      value: "Approved",
     },
   ];
   return (
@@ -118,8 +147,8 @@ const Leave = () => {
             return (
               <DisplayCard
                 customWidth="200px"
-                cardHeader="Card Header1"
-                cardBody="Card Body"
+                cardHeader={item.title}
+                cardBody={item.subTitle}
               />
             );
           })}
@@ -128,16 +157,16 @@ const Leave = () => {
       {/*  */}
       <div className="flex justify-between w-full my-14">
         <div className=" w-[80%] 2xl:w-[50%] flex justify-between items-center ">
-          <Dropdown dropdownText="Survey Type" options={surveyType} />
-          <Dropdown dropdownText="Study Type" options={surveyType} />
-          <Dropdown dropdownText="Country" options={surveyType} />
-          <Dropdown dropdownText="Date" options={surveyType} />
+          <Dropdown dropdownText="Month" options={newmonth} />
+          <Dropdown dropdownText="Year" options={year} />
+          <Dropdown dropdownText="Leave type" options={leavetype} />
+          <Dropdown dropdownText="Status" options={status} />
           <Link
             color="#1765DC"
             border="underline"
             href="https://scalablecss.com/styled-components-global-styles/"
           >
-            underlined link
+            Clear Filter
           </Link>
         </div>
       </div>
@@ -235,7 +264,7 @@ const Leave = () => {
             <p className="text-[24px]">Calendar</p>
             <Calendar />
           </div>
-          <div className="border w-[500px] justify-center items-center p-10 rounded-[24px]  ">
+          <div className="border w-[800px] justify-center items-center p-10 rounded-[24px]  ">
             <p className="text-[24px] mb-5">List of Holiday</p>
             <UpcommingHolidays />
           </div>

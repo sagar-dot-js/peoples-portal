@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import {
   DropdownContainer,
@@ -25,12 +25,27 @@ const Dropdown = ({
   const toggling = () => setIsOpen(!isOpen);
   const [selectedOption, setSelectedOption] = useState(null);
 
+  const dropdownRef = useRef();
+
   const onOptionClicked = (value) => {
     console.log(value);
-    setSelectedOption(value);
+    setSelectedOption && setSelectedOption(value);
     setIsOpen(false);
     console.log(selectedOption);
   };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
 
   console.log(selectedOption);
 
@@ -47,7 +62,7 @@ const Dropdown = ({
   // };
 
   return (
-    <DropdownContainer {...restProps}>
+    <DropdownContainer ref={dropdownRef} {...restProps}>
       <DropdownHeaderContainer onClick={toggling}>
         <DropdownHeader>{selectedOption || dropdownText}</DropdownHeader>
         <IconWrapper>
@@ -60,8 +75,9 @@ const Dropdown = ({
             {options.map((option) => (
               <ListItem
                 value={option?.value}
-                onClick={() =>{ onChange(option?.value);
-                onOptionClicked(option?.label)
+                onClick={() => {
+                  onChange(option?.value);
+                  onOptionClicked(option?.label);
                 }}
               >
                 {option.label}

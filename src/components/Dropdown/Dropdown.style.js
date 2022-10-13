@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 export const DropdownContainer = styled.div`
   /* width: 148px; */
   width: ${(props) => (props.customWidth ? props.customWidth : "200px")};
+  position: relative;
 `;
 
 export const DropdownHeaderContainer = styled.div`
@@ -15,7 +16,7 @@ export const DropdownHeaderContainer = styled.div`
   font-weight: 500;
   font-size: 1.3rem;
   background: #ffffff;
-  height: 50px;
+  height: 40px;
   cursor: pointer;
   border: 2px solid #1765dc;
   color: #1765dc;
@@ -24,6 +25,7 @@ export const DropdownHeaderContainer = styled.div`
   transition: 0.3s ease;
   /* border-radius: 8px 8px 0px 0px; */
   border-radius: 8px;
+  position: relative;
   /* margin-bottom: 0.5em; */
   /* transform: translateZ(0px) scale(0.97); */
 `;
@@ -37,6 +39,9 @@ export const IconWrapper = styled.span`
 
 export const DropdownListContainer = styled.div`
   margin-top: -0.3em;
+  width: ${(props) => (props.customWidth ? props.customWidth : "200px")};
+  position: absolute;
+  z-index: 1000;
 `;
 
 const fadeIn = keyframes`

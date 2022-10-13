@@ -11,6 +11,7 @@ import Header from "./custom_components/Header";
 import Footer from "./custom_components/Footer";
 import MyProfileDetails from "./pages/MyProfileDetails";
 import MyProfileDetailsEdit from "./pages/MyProfileDetailsEdit";
+import UploadedDocuments from "./pages/UploadedDocuments";
 
 function App() {
   return (
@@ -23,9 +24,11 @@ function App() {
         <div className="flex-1 overflow-y-auto">
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/attendance" element={<Attendance />} />
-            <Route path="/leave" element={<Leave />} />
+            {/* <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/attendance" element={<Attendance />} /> */}
+            {/* <Route path="/leave" element={<Leave />} />
             <Route path="/salary" element={<Salary />} />
             <Route path="/policies" element={<Policies />} />
             <Route path="/resignation" element={<Resignation />} />
@@ -34,12 +37,13 @@ function App() {
               path="/my-profile-details/my-profile-details-edit"
               element={<MyProfileDetailsEdit />}
             />
+            <Route path="/uploaded-documents" element={<UploadedDocuments />} /> */}
           </Routes>
 
-          {/* <div className="fixed bottom-0 w-full">
+          <div className="bottom-0 w-full">
             {" "}
             <Footer />
-          </div> */}
+          </div>
         </div>
       </Router>
     </div>
